@@ -1,0 +1,90 @@
+ using System;
+// Single line comment
+
+/*
+Adventure game "The Crimson Moon"
+By Jacob Henriksen 23/1/2020
+*/
+namespace AdventureGame
+{
+    class game
+    {
+        //Character Name
+        static string CharacterName = "";
+
+        public static void StartGame() 
+        {
+            Console.WriteLine("Welcome to the adventure game");
+
+            Console.WriteLine("The Crimson Moon");
+            NameCharacter();
+            Dialog();
+            Choice1();
+           
+        }
+        static void NameCharacter() 
+        {
+            Console.WriteLine("What is your name adventurer?");
+
+            CharacterName = Console.ReadLine();
+            Console.WriteLine("\nThank you " + CharacterName + " Good to have you on this expedition");
+            Console.ReadKey();
+            Console.WriteLine("Are you ready? Good, lets begin");
+            Console.ReadKey();
+        }
+
+        static void Dialog() 
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.Write("\n\nYou are " + CharacterName + " an adventurer, mercenary, explorer or what ever it is you call yourself these days\n");
+            Console.Write("You have been hired by a Wizard named Jared Highwind, to help him on a dangerous quest to find a rare crystal");
+            Console.ReadKey();
+           
+        }
+        static void Choice1() //Mountain or mine choice
+        {
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("\n\nWhat do you think " + CharacterName + "? Should we go through the mine or go over the mountain? ");
+            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.Write("\nHow do you answer? 1) The mountain, 2) The mine, 3) I don't care\n\n");
+            string input = "";
+            input = Console.ReadLine();
+            if (input == "1")
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("\nI believe that the mountains is the best route");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("\nYou state firmly while pointing at the path on the map");
+                Console.ReadKey();
+            }
+            if (input == "2") 
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("\nI believe that the mine is the best route");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("\nYou state firmly while pointing at the entrance on the map");
+                Console.ReadKey();
+            }
+            if (input == "3") 
+            {
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine("\nI don't care, it's up to you to decide");
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("\nYou state firmly while crosing your arms");
+                Console.ReadKey();
+            }
+
+        }
+    }
+    class Item { }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            game.StartGame();
+            Console.ReadKey();
+            
+
+        }
+    }
+}
